@@ -3,9 +3,6 @@ from classes.service import Service
 from classes.meeting import Meeting
 
 
-def welcome():
-    print("Welcome to Meeting Manager")
-
 def exit_program():
     print("Goodbye!")
     exit()
@@ -142,7 +139,7 @@ def meetings_by_date():
     print(MBD)
 
 def num_meetings_by_service():
-    service = input("What type of meeting would you like to see?")
+    service = input("Which companies meetings would you like to see?")
     MBS = Meeting.service_meeting_join(service)
     print(MBS)
 

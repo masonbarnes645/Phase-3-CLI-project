@@ -1,4 +1,5 @@
 import ipdb
+import re
 from classes.__init__ import CURSOR, CONN 
 class Service:
     all={}
@@ -8,7 +9,30 @@ class Service:
         self.description = description
         self.id = id
         
-        
+    @property
+    def name(self):
+        return self._name
+    
+    @name.setter
+    def name(self, name):
+        if len(name) > 40:
+            raise ValueError("Company name is too long")
+        else:
+            self._name = name
+
+    @property
+    def description(self):
+        return self._description
+    
+    @description.setter
+    def description(self,description):
+        if len(description) < 5:
+            raise ValueError("Please enter a longer description")
+        else:
+            self._description = description
+    
+    
+    
     @classmethod
     def create(cls, name, description):
         newDBS = cls(name, description)

@@ -20,7 +20,7 @@ class Customer:
         firstlast = name.split()
         if not isinstance(name, str):
             raise TypeError("Customer name must be a string")
-        elif not re.fullmatch(r'[a-zA-Z ]+', name):
+        elif not re.fullmatch(r'[a-zA-Z  -]+', name):
             raise TypeError("Invalid characters used in name")
         elif not len(firstlast) > 1:
             raise ValueError("Please include customer's first and last name")
